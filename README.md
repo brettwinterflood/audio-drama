@@ -1,25 +1,9 @@
-# Todos
-- [ ] use `previous_text, next_text` to improve [[#3. Generative audio - TTS generation]] tone / continuity / flow 
-- [ ] parsing docx to timestamped json [[#1. Script parsing]]
-	- [ ] Dialogue list 
-	- [ ] Character list 
-	- [ ] SFX list
-	- [ ] cached LLM responses
-- [ ] Changing character voices
-	- [ ] multi language support - Choose language - English version
-- [ ] Re-render each sound effect with audiocraft or elevenlabs 
 
-#### Completed 
-- [x] Re-render (long running task then UI update)
-- [x] Re-render music button in UI chooses a different one 
-- [x] AI generated sound effects [[AudioCraft by Meta (MusicGen)]]
-- [x] use [[uv - built in rust]]
-- [x] Audio TTS generation for each character line - list of .wav files 
-	- [x] with elevenlabs api
-- [x] Audio stichting
-	- [x] TTS rendered in order
-	- [x] Sound effects rendered in order 
-	- [x] Background music
+# Demos
+
+![Parsing demo](1 Parsing.mp4)
+
+![Full Show Audio demo](2 Full Show.mp4)
 
 # Process steps
 
@@ -140,3 +124,29 @@ An optional ambience which can be subtly layered into the background
 - FastAPI
 - Standard for ML
 - Audio processing with `pydub`
+
+
+---
+
+# Todos
+- [ ] use `previous_text, next_text` to improve [[#3. Generative audio - TTS generation]] tone / continuity / flow 
+- [ ] parsing docx to timestamped json [[#1. Script parsing]]
+	- [ ] Dialogue list 
+	- [ ] Character list 
+	- [ ] SFX list
+	- [ ] cached LLM responses
+- [ ] Changing character voices
+	- [ ] multi language support - Choose language - English version
+- [ ] Re-render each sound effect with audiocraft or elevenlabs 
+
+#### Completed 
+- [x] Re-render (long running task then UI update)
+- [x] Re-render music button in UI chooses a different one 
+- [x] AI generated sound effects [[AudioCraft by Meta (MusicGen)]]
+- [x] use [[uv - built in rust]]
+- [x] Audio TTS generation for each character line - list of .wav files 
+	- [x] with elevenlabs api
+- [x] Audio stichting
+	- [x] TTS rendered in order
+	- [x] Sound effects rendered in order 
+	- [x] Background music
