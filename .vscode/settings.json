@@ -1,0 +1,4 @@
+{
+    "python.defaultInterpreterPath": "backed/.venv/bin/python",
+    "python.experiments.enabled": false
+}

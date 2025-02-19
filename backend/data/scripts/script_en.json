@@ -1,0 +1,43 @@
+{
+    "events": [
+      {"type": "soundeffect", "effect": "wind_whistling", "description": "Wind whistles through the trees, leaves rustle quietly in the background."},
+      {"type": "soundeffect", "effect": "birds_chirping", "description": "Birds chirp sporadically, then suddenly fall silent."},
+      {"type": "soundeffect", "effect": "branch_cracking", "description": "A branch cracks in the distance, the sound echoes through the clearing."},
+      {"type": "dialogue", "speaker": "Emma", "line": "So, Leo, what were you trying to show me here?", "emotion": "curious"},
+      {"type": "dialogue", "speaker": "Leo", "line": "Patience, Emma. It's a bit... how should I say... next-level cool.", "emotion": "excited"},
+      {"type": "dialogue", "speaker": "Emma", "line": "Your surprises weren't always cool. Remember the 'super cave' full of spiders.", "emotion": "skeptical"},
+      {"type": "dialogue", "speaker": "Leo", "line": "Hey, that was an adventure! And there are no spiders this time. I promise.", "emotion": "defensive"},
+      {"type": "soundeffect", "effect": "door_creaking", "description": "The door creaks loudly as Leo pushes it open."},
+      {"type": "soundeffect", "effect": "echoing_sound", "description": "A faint, echoing sound follows as the door swings back against the trunk."},
+      {"type": "dialogue", "speaker": "Emma", "line": "What the...? Is that a real door? In a tree? Seriously?", "emotion": "shocked"},
+      {"type": "dialogue", "speaker": "Leo", "line": "Yep! Now wait until you see what's behind it. Come with me!", "emotion": "excited"},
+      {"type": "dialogue", "speaker": "Emma", "line": "I have a strange feeling about this...", "emotion": "uneasy"},
+      {"type": "dialogue", "speaker": "Leo", "line": "Strange feeling? This is adventure, Emma! Come on!", "emotion": "enthusiastic"},
+      {"type": "soundeffect", "effect": "footsteps_muddy", "description": "Footsteps on wet ground produce a dull, muddy sound."},
+      {"type": "soundeffect", "effect": "water_dripping", "description": "Drops of water trickle in the distance, a steady sound like a broken water pipe."},
+      {"type": "dialogue", "speaker": "Emma", "line": "Okay, I'm officially impressed... but this is really creepy.", "emotion": "cautious"},
+      {"type": "dialogue", "speaker": "Leo", "line": "Creepy? This is magic!", "emotion": "enthusiastic"},
+      {"type": "dialogue", "speaker": "Emma", "line": "Sure, Leo… because a dark hallway with dripping water and flickering lights isn't scary at all.", "emotion": "sarcastic"},
+      {"type": "soundeffect", "effect": "artifact_hum", "description": "A large, glowing artifact floats in the center, surrounded by a deep, vibrating hum."},
+      {"type": "dialogue", "speaker": "Emma", "line": "Wow... Okay, that's... intense. What the hell is that?", "emotion": "awed"},
+      {"type": "dialogue", "speaker": "Leo", "line": "This is the 'Lightcore'. I found it a few months ago. It was just here, in the middle of nowhere.", "emotion": "excited"},
+      {"type": "dialogue", "speaker": "Emma", "line": "And you thought, 'Hey, I’ll take this super creepy glowing thing home with me'?", "emotion": "incredulous"},
+      {"type": "dialogue", "speaker": "Leo", "line": "Not quite. It's... complicated. I wanted you to see it.", "emotion": "hesitant"},
+      {"type": "soundeffect", "effect": "artifact_activation", "description": "The humming becomes more intense, and a bright beam of light suddenly shoots into the darkness."},
+      {"type": "dialogue", "speaker": "Emma", "line": "Leo, I have a really bad feeling about this!", "emotion": "worried"},
+      {"type": "dialogue", "speaker": "Leo", "line": "Stay calm. I think... it's activating... or something.", "emotion": "uncertain"},
+      {"type": "dialogue", "speaker": "Emma", "line": "Or something like that? That's not reassuring!", "emotion": "nervous"},
+      {"type": "soundeffect", "effect": "deep_rumble", "description": "A deep rumble, barely audible but noticeable, fills the cave."},
+      {"type": "dialogue", "speaker": "Emma", "line": "Leo… now.", "emotion": "whispering"},
+      {"type": "dialogue", "speaker": "Leo", "line": "Okay… now.", "emotion": "serious"}
+    ],
+    "scene_descriptions": [
+      {"time": 5, "description": "A mysterious old tree stands before them with a barely visible wooden door."},
+      {"time": 10, "description": "A narrow corridor with flickering lights hanging from the ceiling like fireflies."},
+      {"time": 15, "description": "A wide cave opens up with a glowing artifact at its center, emitting a deep, vibrating hum."}
+    ],
+    "characters": {
+      "Emma": {"description": "Skeptical but adventurous", "personality": "cautious", "elevenlabs_voice": "Emily", "gender":"Female"},
+      "Leo": {"description": "Enthusiastic and risk-taking", "personality": "adventurous", "elevenlabs_voice": "Charlie","gender":"Male"}
+    }
+  }

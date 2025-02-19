@@ -1,0 +1,9 @@
+POST http://0.0.0.0:8000/parse-doc/
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary12345
+
+------WebKitFormBoundary12345
+Content-Disposition: form-data; name="script"; filename="Skript GoAudio.docx"
+Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+
+< ./Skript%20GoAudio.docx
+------WebKitFormBoundary12345--

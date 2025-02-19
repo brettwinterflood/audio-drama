@@ -1,0 +1,279 @@
+{
+  "dialogue_timing": [
+    {
+      "file": "data/dialogue/Emma_curious_also_leo_was_hast_du_Emily.mp3",
+      "start_time": 0.0,
+      "duration": 4.493,
+      "end_time": 4.493
+    },
+    {
+      "file": "data/dialogue/Leo_excited_geduld_emma_es_ist_ein_Charlie.mp3",
+      "start_time": 4.493,
+      "duration": 5.747,
+      "end_time": 10.24
+    },
+    {
+      "file": "data/dialogue/Emma_skeptical_deine_berraschungen_waren_nicht_immer_Emily.mp3",
+      "start_time": 10.24,
+      "duration": 9.378,
+      "end_time": 19.618000000000002
+    },
+    {
+      "file": "data/dialogue/Leo_defensive_hey_das_war_ein_abenteuer_Charlie.mp3",
+      "start_time": 19.618,
+      "duration": 4.598,
+      "end_time": 24.215999999999998
+    },
+    {
+      "file": "data/dialogue/Emma_surprised_was_zur_ist_das_eine_Emily.mp3",
+      "start_time": 24.216,
+      "duration": 7.471,
+      "end_time": 31.687
+    },
+    {
+      "file": "data/dialogue/Leo_enthusiastic_yep_und_jetzt_warte_bis_Charlie.mp3",
+      "start_time": 31.687,
+      "duration": 3.579,
+      "end_time": 35.266
+    },
+    {
+      "file": "data/dialogue/Emma_uneasy_ich_hab_ein_seltsames_gefhl_Emily.mp3",
+      "start_time": 35.266,
+      "duration": 2.403,
+      "end_time": 37.669
+    },
+    {
+      "file": "data/dialogue/Leo_encouraging_seltsames_gefhl_das_ist_abenteuer_Charlie.mp3",
+      "start_time": 37.669,
+      "duration": 3.892,
+      "end_time": 41.561
+    },
+    {
+      "file": "data/dialogue/Emma_impressed_but_worried_okay_ich_bin_officially_impressed_Emily.mp3",
+      "start_time": 41.561,
+      "duration": 6.4,
+      "end_time": 47.961
+    },
+    {
+      "file": "data/dialogue/Leo_enthusiastic_creepy_das_ist_magie_Charlie.mp3",
+      "start_time": 47.961,
+      "duration": 1.802,
+      "end_time": 49.763
+    },
+    {
+      "file": "data/dialogue/Emma_sarcastic_klar_leo_weil_ein_dunkler_Emily.mp3",
+      "start_time": 49.763,
+      "duration": 10.998,
+      "end_time": 60.760999999999996
+    },
+    {
+      "file": "data/dialogue/Emma_amazed_wow_okay_das_ist_heftig_Emily.mp3",
+      "start_time": 60.761,
+      "duration": 6.583,
+      "end_time": 67.34400000000001
+    },
+    {
+      "file": "data/dialogue/Leo_proud_das_ist_der_lightcore_ich_Charlie.mp3",
+      "start_time": 67.344,
+      "duration": 6.583,
+      "end_time": 73.92699999999999
+    },
+    {
+      "file": "data/dialogue/Emma_incredulous_und_du_dachtest_hey_ich_Emily.mp3",
+      "start_time": 73.927,
+      "duration": 7.236,
+      "end_time": 81.16300000000001
+    },
+    {
+      "file": "data/dialogue/Leo_mysterious_nicht_ganz_es_ist_kompliziert_Charlie.mp3",
+      "start_time": 81.163,
+      "duration": 4.833,
+      "end_time": 85.996
+    },
+    {
+      "file": "data/dialogue/Emma_worried_leo_ich_hab_ein_really_Emily.mp3",
+      "start_time": 85.996,
+      "duration": 4.075,
+      "end_time": 90.071
+    },
+    {
+      "file": "data/dialogue/Leo_uncertain_bleib_ruhig_ich_glaube_es_Charlie.mp3",
+      "start_time": 90.071,
+      "duration": 3.709,
+      "end_time": 93.78
+    },
+    {
+      "file": "data/dialogue/Emma_alarmed_oder_so_was_das_ist_Emily.mp3",
+      "start_time": 93.78,
+      "duration": 3.109,
+      "end_time": 96.889
+    },
+    {
+      "file": "data/dialogue/Emma_fearful_leo_was_hast_du_getan_Emily.mp3",
+      "start_time": 96.889,
+      "duration": 2.325,
+      "end_time": 99.214
+    },
+    {
+      "file": "data/dialogue/Leo_excited_ich_glaube_wir_haben_gerade_Charlie.mp3",
+      "start_time": 99.214,
+      "duration": 3.344,
+      "end_time": 102.55799999999999
+    },
+    {
+      "file": "data/dialogue/Emma_frightened_was_war_das_hast_du_Emily.mp3",
+      "start_time": 102.558,
+      "duration": 3.187,
+      "end_time": 105.745
+    },
+    {
+      "file": "data/dialogue/Leo_dismissive_es_ist_nichts_bestimmt_nur_Charlie.mp3",
+      "start_time": 105.745,
+      "duration": 4.258,
+      "end_time": 110.003
+    },
+    {
+      "file": "data/dialogue/Emma_urgent_leo_da_ist_was_hr_Emily.mp3",
+      "start_time": 110.003,
+      "duration": 3.474,
+      "end_time": 113.477
+    },
+    {
+      "file": "data/dialogue/Emma_frightened_leo_wir_sollten_gehen_sofort_Emily.mp3",
+      "start_time": 113.477,
+      "duration": 3.84,
+      "end_time": 117.31700000000001
+    },
+    {
+      "file": "data/dialogue/Leo_hesitant_vielleicht_hast_du_recht_aber_Charlie.mp3",
+      "start_time": 117.317,
+      "duration": 3.291,
+      "end_time": 120.60799999999999
+    },
+    {
+      "file": "data/dialogue/Emma_desperate_leo_jetzt_Emily.mp3",
+      "start_time": 120.608,
+      "duration": 2.22,
+      "end_time": 122.828
+    },
+    {
+      "file": "data/dialogue/Leo_resigned_okay_jetzt_Charlie.mp3",
+      "start_time": 122.828,
+      "duration": 1.384,
+      "end_time": 124.212
+    }
+  ],
+  "sound_effect_timing": [
+    {
+      "effect": "forest_wind_trees",
+      "description": "Wind pfeift durch die B\u00e4ume, Bl\u00e4tter rascheln leise im Hintergrund",
+      "start_time": 0.0,
+      "end_time": 37.669,
+      "duration": 37.669,
+      "position": "intro",
+      "crossfade_duration": 2.0,
+      "prev_dialogue": null,
+      "next_dialogue": "data/dialogue/Emma_curious_also_leo_was_hast_du_Emily.mp3"
+    },
+    {
+      "effect": "branch_snap",
+      "description": "Ein Ast knackt in der Ferne, der Klang hallt durch die Lichtung",
+      "start_time": 37.669,
+      "end_time": 47.961,
+      "duration": 10.292000000000002,
+      "position": "continuous",
+      "crossfade_duration": 2.0,
+      "prev_dialogue": "data/dialogue/Emma_uneasy_ich_hab_ein_seltsames_gefhl_Emily.mp3",
+      "next_dialogue": "data/dialogue/Leo_encouraging_seltsames_gefhl_das_ist_abenteuer_Charlie.mp3"
+    },
+    {
+      "effect": "door_creak",
+      "description": "Die T\u00fcr knarrt laut, wie ein alter, schwerer Holzschrank",
+      "start_time": 47.961,
+      "end_time": 49.763,
+      "duration": 1.8019999999999996,
+      "position": "continuous",
+      "crossfade_duration": 0.9009999999999998,
+      "prev_dialogue": "data/dialogue/Emma_impressed_but_worried_okay_ich_bin_officially_impressed_Emily.mp3",
+      "next_dialogue": "data/dialogue/Leo_enthusiastic_creepy_das_ist_magie_Charlie.mp3"
+    },
+    {
+      "effect": "cave_walking",
+      "description": "Schritte auf dem feuchten Boden erzeugen ein dumpfes, matschiges Ger\u00e4usch",
+      "start_time": 49.763,
+      "end_time": 73.92699999999999,
+      "duration": 24.163999999999994,
+      "position": "continuous",
+      "crossfade_duration": 2.0,
+      "prev_dialogue": "data/dialogue/Leo_enthusiastic_creepy_das_ist_magie_Charlie.mp3",
+      "next_dialogue": "data/dialogue/Emma_sarcastic_klar_leo_weil_ein_dunkler_Emily.mp3"
+    },
+    {
+      "effect": "humming_artifact",
+      "description": "Tiefes, vibrierendes Summen vom Artefakt",
+      "start_time": 73.92699999999999,
+      "end_time": 85.996,
+      "duration": 12.069000000000003,
+      "position": "continuous",
+      "crossfade_duration": 2.0,
+      "prev_dialogue": "data/dialogue/Leo_proud_das_ist_der_lightcore_ich_Charlie.mp3",
+      "next_dialogue": "data/dialogue/Emma_incredulous_und_du_dachtest_hey_ich_Emily.mp3"
+    },
+    {
+      "effect": "intensifying_hum",
+      "description": "Das Summen wird intensiver, tiefer, mit Bodenvibration",
+      "start_time": 85.996,
+      "end_time": 90.071,
+      "duration": 4.075000000000003,
+      "position": "continuous",
+      "crossfade_duration": 2.0,
+      "prev_dialogue": "data/dialogue/Leo_mysterious_nicht_ganz_es_ist_kompliziert_Charlie.mp3",
+      "next_dialogue": "data/dialogue/Emma_worried_leo_ich_hab_ein_really_Emily.mp3"
+    },
+    {
+      "effect": "light_beam",
+      "description": "Ein glei\u00dfender Lichtstrahl schie\u00dft in die Dunkelheit",
+      "start_time": 90.071,
+      "end_time": 93.78,
+      "duration": 3.709000000000003,
+      "position": "continuous",
+      "crossfade_duration": 1.8545000000000016,
+      "prev_dialogue": "data/dialogue/Emma_worried_leo_ich_hab_ein_really_Emily.mp3",
+      "next_dialogue": "data/dialogue/Leo_uncertain_bleib_ruhig_ich_glaube_es_Charlie.mp3"
+    },
+    {
+      "effect": "static_electricity",
+      "description": "Leises Knistern wie von statischer Elektrizit\u00e4t",
+      "start_time": 93.78,
+      "end_time": 99.214,
+      "duration": 5.4339999999999975,
+      "position": "continuous",
+      "crossfade_duration": 2.0,
+      "prev_dialogue": "data/dialogue/Leo_uncertain_bleib_ruhig_ich_glaube_es_Charlie.mp3",
+      "next_dialogue": "data/dialogue/Emma_alarmed_oder_so_was_das_ist_Emily.mp3"
+    },
+    {
+      "effect": "rhythmic_humming",
+      "description": "Ein leises Summen, schwach und rhythmisch",
+      "start_time": 99.214,
+      "end_time": 105.745,
+      "duration": 6.531000000000006,
+      "position": "continuous",
+      "crossfade_duration": 2.0,
+      "prev_dialogue": "data/dialogue/Emma_fearful_leo_was_hast_du_getan_Emily.mp3",
+      "next_dialogue": "data/dialogue/Leo_excited_ich_glaube_wir_haben_gerade_Charlie.mp3"
+    },
+    {
+      "effect": "footsteps_heavy",
+      "description": "Schwere Schritte auf feuchtem Boden, etwas Gro\u00dfes n\u00e4hert sich",
+      "start_time": 105.745,
+      "end_time": 124.212,
+      "duration": 18.467,
+      "position": "continuous",
+      "crossfade_duration": 0.0,
+      "prev_dialogue": "data/dialogue/Emma_frightened_was_war_das_hast_du_Emily.mp3",
+      "next_dialogue": "data/dialogue/Leo_dismissive_es_ist_nichts_bestimmt_nur_Charlie.mp3"
+    }
+  ],
+  "total_dialogue_duration": 124.212
+}

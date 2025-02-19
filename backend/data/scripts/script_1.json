@@ -1,0 +1,249 @@
+{
+  "events": [
+    {
+      "type": "soundeffect",
+      "effect": "forest_wind_trees",
+      "description": "Wind pfeift durch die Bäume, Blätter rascheln leise im Hintergrund"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Emma",
+      "line": "Also, Leo, was hast du mir hier überhaupt zeigen wollen?",
+      "emotion": "curious"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Leo",
+      "line": "Geduld, Emma. Es ist ein bisschen… wie soll ich sagen… next-level cool.",
+      "emotion": "excited"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Emma",
+      "line": "Deine Überraschungen waren nicht immer cool. Erinnere dich an die 'Super-Höhle' voller Spinnen.",
+      "emotion": "skeptical"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Leo",
+      "line": "Hey, das war ein Abenteuer! Und diesmal gibt's keine Spinnen. Versprochen.",
+      "emotion": "defensive"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Emma",
+      "line": "Was zur…? Ist das eine echte Tür? In einem Baum? Seriously?",
+      "emotion": "surprised"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Leo",
+      "line": "Yep! Und jetzt warte, bis du siehst, was dahinter ist. Komm mit!",
+      "emotion": "enthusiastic"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Emma",
+      "line": "Ich hab ein seltsames Gefühl bei der Sache…",
+      "emotion": "uneasy"
+    },
+    {
+      "type": "soundeffect",
+      "effect": "branch_snap",
+      "description": "Ein Ast knackt in der Ferne, der Klang hallt durch die Lichtung"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Leo",
+      "line": "Seltsames Gefühl? Das ist Abenteuer, Emma! Los, komm!",
+      "emotion": "encouraging"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Emma",
+      "line": "Okay, ich bin officially impressed… aber das hier ist echt creepy.",
+      "emotion": "impressed_but_worried"
+    },
+    {
+      "type": "soundeffect",
+      "time": 10,
+      "effect": "door_creak",
+      "description": "Die Tür knarrt laut, wie ein alter, schwerer Holzschrank"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Leo",
+      "line": "Creepy? Das ist Magie!",
+      "emotion": "enthusiastic"
+    },
+    {
+      "type": "soundeffect",
+      "effect": "cave_walking",
+      "description": "Schritte auf dem feuchten Boden erzeugen ein dumpfes, matschiges Geräusch"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Emma",
+      "line": "Klar, Leo… weil ein dunkler Gang mit tropfendem Wasser und flackernden Lichtern überhaupt nicht gruselig ist.",
+      "emotion": "sarcastic"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Emma",
+      "line": "Wow… Okay, das ist… heftig. Was zur Hölle ist das?",
+      "emotion": "amazed"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Leo",
+      "line": "Das ist der 'Lightcore'. Ich hab's vor ein paar Monaten gefunden. Es war einfach hier, mitten im Nichts.",
+      "emotion": "proud"
+    },
+    {
+      "type": "soundeffect",
+      "effect": "humming_artifact",
+      "description": "Tiefes, vibrierendes Summen vom Artefakt"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Emma",
+      "line": "Und du dachtest: 'Hey, ich nehm mal das supergruselige, leuchtende Ding mit nach Hause'?",
+      "emotion": "incredulous"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Leo",
+      "line": "Nicht ganz. Es ist… kompliziert. Ich wollte, dass du es siehst.",
+      "emotion": "mysterious"
+    },
+    {
+      "type": "soundeffect",
+      "effect": "intensifying_hum",
+      "description": "Das Summen wird intensiver, tiefer, mit Bodenvibration"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Emma",
+      "line": "Leo, ich hab ein really bad feeling about this!",
+      "emotion": "worried"
+    },
+    {
+      "type": "soundeffect",
+      "effect": "light_beam",
+      "description": "Ein gleißender Lichtstrahl schießt in die Dunkelheit"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Leo",
+      "line": "Bleib ruhig. Ich glaube… es aktiviert sich… oder so was.",
+      "emotion": "uncertain"
+    },
+    {
+      "type": "soundeffect",
+      "effect": "static_electricity",
+      "description": "Leises Knistern wie von statischer Elektrizität"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Emma",
+      "line": "Oder so was? Das ist nicht beruhigend!",
+      "emotion": "alarmed"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Emma",
+      "line": "Leo… Was hast du getan?",
+      "emotion": "fearful"
+    },
+    {
+      "type": "soundeffect",
+      "effect": "rhythmic_humming",
+      "description": "Ein leises Summen, schwach und rhythmisch"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Leo",
+      "line": "Ich glaube… wir haben gerade etwas Großes entdeckt.",
+      "emotion": "excited"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Emma",
+      "line": "Was war das? Hast du das auch gehört?",
+      "emotion": "frightened"
+    },
+    {
+      "type": "soundeffect",
+      "effect": "footsteps_heavy",
+      "description": "Schwere Schritte auf feuchtem Boden, etwas Großes nähert sich"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Leo",
+      "line": "Es ist nichts. Bestimmt nur… der Nachhall von dem Artefakt.",
+      "emotion": "dismissive"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Emma",
+      "line": "Leo… da ist was. Hör genau hin.",
+      "emotion": "urgent"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Emma",
+      "line": "Leo… wir sollten gehen. Sofort.",
+      "emotion": "frightened"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Leo",
+      "line": "Vielleicht hast du recht… aber was, wenn wir es verpassen?",
+      "emotion": "hesitant"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Emma",
+      "line": "Leo… jetzt.",
+      "emotion": "desperate"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Leo",
+      "line": "Okay… jetzt.",
+      "emotion": "resigned"
+    }
+  ],
+  "scene_descriptions": [
+    {
+      "time": 5,
+      "description": "Ein alter Baum steht vor ihnen, sein Stamm ist grob und voller Rillen. In der Mitte zeichnet sich eine kleine Holztür ab, fast unsichtbar im Dämmerlicht."
+    },
+    {
+      "time": 12,
+      "description": "Sie treten in einen schmalen Gang. Die Luft ist kühl und feucht, und es riecht nach Erde und Holz. Kleine, flackernde Lichter hängen von der Decke wie Glühwürmchen, werfen tanzende Schatten an die Wände."
+    },
+    {
+      "time": 20,
+      "description": "Der Gang öffnet sich plötzlich zu einer weiten Höhle. Der Raum ist riesig, das Echo ihrer Schritte hallt dumpf. In der Mitte schwebt ein großes, leuchtendes Artefakt."
+    },
+    {
+      "time": 40,
+      "description": "Die Höhle wird still. Die Luft fühlt sich schwer an, fast elektrisiert, und ein schwacher Ozongeruch liegt in der Höhle."
+    }
+  ],
+  "characters": {
+    "Emma": {
+      "description": "Skeptisch und vorsichtig, mit einem guten Gespür für Gefahr",
+      "personality": "rational_cautious",
+      "elevenlabs_voice": "Emily",
+      "gender": "Female"
+    },
+    "Leo": {
+      "description": "Abenteuerlustig und enthusiastisch, manchmal leichtsinnig",
+      "personality": "adventurous_reckless",
+      "elevenlabs_voice": "Charlie",
+      "gender": "Male"
+    }
+  }
+}
