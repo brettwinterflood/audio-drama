@@ -66,7 +66,7 @@ def generate_tts_files(script_data: dict) -> list:
 
 
 def get_tts_filename(text, speaker, voice, emotion):
-    # Prepare filename
+    # TODO use hashes here
     words = text.split()[:5]
     filename_base = "_".join(words).lower()
     filename_base = re.sub(r"[^a-z0-9_]", "", filename_base)

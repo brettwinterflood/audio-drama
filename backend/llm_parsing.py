@@ -45,16 +45,7 @@ def parse_script_with_llm(
     model: str = "gpt-4-0125-preview"
 ) -> dict:
     """
-    Parse a film script using either OpenAI or Claude to extract structured data.
-    
-    Args:
-        script_text (str): The input script text to parse
-        dummy (bool): If True, returns dummy data from a JSON file
-        provider (str): The LLM provider to use ("openai" or "claude")
-        model (str): The specific model to use
-    
-    Returns:
-        dict: Structured data extracted from the script
+    Parse an unstructured film script with llms to json structured data.
     """
     if dummy:
         try:

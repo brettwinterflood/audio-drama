@@ -47,8 +47,6 @@ def create_music(show_id):
 
     # Lower the volume of the music
     music = music - 15
-
-    # Convert to binary data
     mp3_buffer = BytesIO()
     music.export(mp3_buffer, format="mp3")
     mp3_binary = mp3_buffer.getvalue()

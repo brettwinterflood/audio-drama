@@ -12,6 +12,7 @@ import io
 from elevenlabs import ElevenLabs
 from dotenv import load_dotenv
 
+CROSSFADE_DURATION = 1000  # 1 second crossfade
 DEBUG_AUDIO_FOLDER = "debug_audio"  # Define debug folder
 
 class SFXModel(Enum):
@@ -129,6 +130,82 @@ def generate_ai_sfx(missing_effects, sfx_model):
         else:
             generate_ai_sound_effect_audiocraft(effect)
 
+def apply_crossfading(sfx_audio, event, effect_audio, active_backgrounds, start_ms):
+    """
+    Apply crossfading logic for background sounds.
+    Returns the modified sfx_audio and updated active_backgrounds list.
+    """
+    # Check for overlapping background sounds
+    current_time = start_ms
+    
+    # Fade out any overlapping background sounds
+    for bg in active_backgrounds[:]:
+        if bg['end_time'] > current_time:
+            # Calculate fadeout position
+            fadeout_start = max(current_time - CROSSFADE_DURATION, bg['start_time'])
+            original_end = bg['end_time']
+            
+            # Apply fadeout
+            remaining_duration = original_end - fadeout_start
+            if remaining_duration > CROSSFADE_DURATION:
+                sfx_audio = sfx_audio.fade(
+                    start=fadeout_start,
+                    duration=CROSSFADE_DURATION,
+                    to_gain=-120.0  # Fade to silence
+                )
+            active_backgrounds.remove(bg)
+            print(f"Faded out background: {bg['effect']} at {fadeout_start}ms")
+    
+    # Add new background sound with fadein
+    effect_audio = effect_audio.fade_in(CROSSFADE_DURATION)
+    sfx_audio = sfx_audio.overlay(effect_audio, position=start_ms)
+    
+    # Track this background sound
+    active_backgrounds.append({
+        'effect': event['effect'],
+        'start_time': start_ms,
+        'end_time': start_ms + len(effect_audio),
+    })
+    print(f"Added background: {event['effect']} at {start_ms}ms")
+    
+    return sfx_audio, active_backgrounds
+
+def calculate_average_volume(events):
+    """
+    Calculate the average volume of all sound effects.
+    Returns tuple of (average_volume, valid_effects_count)
+    """
+    total_volume = 0
+    valid_effects = 0
+
+    for event in events:
+        sfx_mp3 = f"data/sfx/{event['effect']}.mp3"
+        sfx_wav = f"data/sfx/{event['effect']}.wav"
+        sfx_path = sfx_mp3 if os.path.exists(sfx_mp3) else sfx_wav
+        
+        try:
+            if os.path.exists(sfx_path):
+                effect_audio = AudioSegment.from_file(sfx_path)
+                total_volume += effect_audio.dBFS
+                valid_effects += 1
+                print(f"Original volume for {event['effect']}: {effect_audio.dBFS:.1f} dBFS")
+        except Exception as e:
+            print(f"Error analyzing sound effect {event['effect']}: {str(e)}")
+    
+    if valid_effects > 0:
+        average_volume = total_volume / valid_effects
+        print(f"\nAverage effect volume: {average_volume:.1f} dBFS")
+        return average_volume, valid_effects
+    return 0, 0
+
+def normalize_audio(effect_audio, target_dbfs):
+    """
+    Normalize audio to target dBFS level.
+    Returns normalized audio segment.
+    """
+    volume_change = target_dbfs - effect_audio.dBFS
+    return effect_audio.apply_gain(volume_change), volume_change
+
 def create_sfx(show_id, sfx_model=SFXModel.ELEVENLABS_API):
     print("\nCreating sound effects for show:", show_id)
 
@@ -159,94 +236,36 @@ def create_sfx(show_id, sfx_model=SFXModel.ELEVENLABS_API):
     if missing_effects:
         generate_ai_sfx(missing_effects, sfx_model=sfx_model)
     
-    # First pass - calculate average volume
-    total_volume = 0
-    valid_effects = 0
-
-    for event in events:
-        # Try MP3 first, then WAV
-        sfx_mp3 = f"data/sfx/{event['effect']}.mp3"
-        sfx_wav = f"data/sfx/{event['effect']}.wav"
-        
-        sfx_path = sfx_mp3 if os.path.exists(sfx_mp3) else sfx_wav
-        
-        try:
-            if os.path.exists(sfx_path):
-                # Use from_file instead of from_wav to handle both formats
-                effect_audio = AudioSegment.from_file(sfx_path)
-                total_volume += effect_audio.dBFS
-                valid_effects += 1
-                print(f"Original volume for {event['effect']}: {effect_audio.dBFS:.1f} dBFS")
-        except Exception as e:
-            print(f"Error analyzing sound effect {event['effect']}: {str(e)}")
-
-    # Calculate average volume if we have valid effects
+    # Calculate average volume
+    target_dbfs = -40
+    average_volume, valid_effects = calculate_average_volume(events)
     if valid_effects > 0:
-        average_volume = total_volume / valid_effects
-        print(f"\nAverage effect volume: {average_volume:.1f} dBFS")
         print(f"Target volume: {target_dbfs} dBFS")
 
-    # Track active background sounds
+    # Process and position effects
     active_backgrounds = []
-    CROSSFADE_DURATION = 1000  # 1 second crossfade
 
-    # Second pass - normalize and position effects
     for event in events:
-        # Try MP3 first, then WAV
         sfx_mp3 = f"data/sfx/{event['effect']}.mp3"
         sfx_wav = f"data/sfx/{event['effect']}.wav"
-        
         sfx_path = sfx_mp3 if os.path.exists(sfx_mp3) else sfx_wav
         
         try:
             if os.path.exists(sfx_path):
-                # Use from_file instead of from_wav to handle both formats
                 effect_audio = AudioSegment.from_file(sfx_path)
                 duration = len(effect_audio) / 1000.0  # Convert to seconds
                 
-                # Calculate and apply volume normalization
-                volume_change = target_dbfs - effect_audio.dBFS
-                effect_audio = effect_audio.apply_gain(volume_change)
+                # Normalize the audio
+                effect_audio, volume_change = normalize_audio(effect_audio, target_dbfs)
                 print(f"Normalized {event['effect']}: {volume_change:.1f}dB adjustment")
 
                 start_ms = int(event["start_time"] * 1000)
                 
-                # Handle background sounds differently
                 if is_background_noise(duration, event['effect']):
-                    # Check for overlapping background sounds
-                    current_time = start_ms
-                    
-                    # Fade out any overlapping background sounds
-                    for bg in active_backgrounds[:]:
-                        if bg['end_time'] > current_time:
-                            # Calculate fadeout position
-                            fadeout_start = max(current_time - CROSSFADE_DURATION, bg['start_time'])
-                            original_end = bg['end_time']
-                            
-                            # Apply fadeout
-                            remaining_duration = original_end - fadeout_start
-                            if remaining_duration > CROSSFADE_DURATION:
-                                sfx_audio = sfx_audio.fade(
-                                    start=fadeout_start,
-                                    duration=CROSSFADE_DURATION,
-                                    to_gain=-120.0  # Fade to silence
-                                )
-                            active_backgrounds.remove(bg)
-                            print(f"Faded out background: {bg['effect']} at {fadeout_start}ms")
-                    
-                    # Add new background sound with fadein
-                    effect_audio = effect_audio.fade_in(CROSSFADE_DURATION)
-                    sfx_audio = sfx_audio.overlay(effect_audio, position=start_ms)
-                    
-                    # Track this background sound
-                    active_backgrounds.append({
-                        'effect': event['effect'],
-                        'start_time': start_ms,
-                        'end_time': start_ms + len(effect_audio),
-                    })
-                    print(f"Added background: {event['effect']} at {start_ms}ms")
+                    sfx_audio, active_backgrounds = apply_crossfading(
+                        sfx_audio, event, effect_audio, active_backgrounds, start_ms
+                    )
                 else:
-                    # Regular sound effect
                     sfx_audio = sfx_audio.overlay(effect_audio, position=start_ms)
                     print(f"Added sound effect: {event['effect']} at {start_ms}ms")
             else:

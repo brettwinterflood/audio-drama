@@ -40,7 +40,6 @@ async def process_show_script(
     provider: Provider = Query(Provider.OPENAI),
     model: Optional[str] = Query(None)
 ):
-    # Use centralized model configuration
     if model is None:
         model = ModelConfig.get_default_model(provider)
     elif not ModelConfig.is_valid_model(provider, model):
@@ -51,10 +50,8 @@ async def process_show_script(
 
     conn = sqlite3.connect(DB_FILE)
     cursor = conn.cursor()
-    print(f'starting {show_id} with {provider} model {model}')
-
     try:
-        # Fetch the script for the given show_id
+
         cursor.execute(f"SELECT id, original_script FROM {TABLE_NAME} WHERE id = ?", (show_id,))
         row = cursor.fetchone()
         
@@ -63,15 +60,19 @@ async def process_show_script(
         
         script_id, original_script = row
 
-        # Process the script with specified provider and model
-        processed_script = parse_script_with_llm(
-            original_script,
-            dummy=bool(dummy),
-            provider=provider.value,
-            model=model
-        )
+        try:
+            print(f'Starting parse of {show_id} with {provider} model {model}')
+            processed_script = parse_script_with_llm(
+                original_script,
+                dummy=bool(dummy),
+                provider=provider.value,
+                model=model
+            )
+        except Exception as e:
+            print(f"Error processing script: {str(e)}")
+            raise HTTPException(status_code=500, detail=f"Error processing script: {str(e)}")
+        
 
-        # Store the processed script along with metadata about the provider and model used
         metadata = {
             **processed_script,
             "processing_metadata": {
@@ -80,8 +81,8 @@ async def process_show_script(
                 "processed_at": str(datetime.datetime.now())
             }
         }
+        # store the processeed script
 
-        # Update the database with the processed script and metadata
         cursor.execute(
             f"UPDATE {TABLE_NAME} SET parsed_script = ? WHERE id = ?",
             (json.dumps(metadata), script_id)
@@ -98,10 +99,8 @@ async def process_show_script(
         }
 
     except Exception as e:
-        # Log the error for debugging
-        print(f"Error processing script: {str(e)}")
+        print(f"Database error: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error processing script: {str(e)}")
-    
     finally:
         conn.close()
 
@@ -113,7 +112,6 @@ async def analyze_timing(show_id: int):
     cursor = conn.cursor()
 
     try:
-        # Fetch the parsed script for the given show_id
         cursor.execute(f"SELECT parsed_script FROM {TABLE_NAME} WHERE id = ?", (show_id,))
         row = cursor.fetchone()
         
@@ -122,10 +120,10 @@ async def analyze_timing(show_id: int):
 
         parsed_script = json.loads(row[0])
 
-        # Generate timing analysis
         timing_report = analyze_script_timing(parsed_script)
+        
+        # update show record with timing info
 
-        # Update the database with the timing report
         cursor.execute(
             f"UPDATE {TABLE_NAME} SET event_timing = ? WHERE id = ?",
             (json.dumps(timing_report), show_id)
@@ -153,7 +151,6 @@ async def generate_audio(background_tasks: BackgroundTasks, show_id: int, type: 
     conn = sqlite3.connect(DB_FILE)
     cursor = conn.cursor()
 
-    # Retrieve script for given show_id
     cursor.execute(f"SELECT parsed_script FROM {TABLE_NAME} WHERE id = ?", (show_id,))
     row = cursor.fetchone()
     conn.close()
@@ -161,9 +158,9 @@ async def generate_audio(background_tasks: BackgroundTasks, show_id: int, type: 
     if not row or not row[0]:
         raise HTTPException(status_code=404, detail="Parsed script not found for this show_id")
 
-    parsed_script = json.loads(row[0])  # Convert from JSON string to dict
+    parsed_script = json.loads(row[0])
 
-    # Run audio generation as a background task
+    # run audio generation as a background task
     background_tasks.add_task(create_audio, show_id, type)
 
     return {"message": f"{type} generation started", "show_id": show_id}
